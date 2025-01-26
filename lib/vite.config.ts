@@ -1,13 +1,17 @@
 import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
-import UnoCSS from "unocss/vite";
+import tailwindcss from '@tailwindcss/vite';
 import dts from "vite-plugin-dts";
 import { resolve } from "path";
 
 import packageJson from "./package.json";
 
 export default defineConfig({
-  plugins: [UnoCSS(), solid(), dts({ insertTypesEntry: true })],
+  plugins: [
+    tailwindcss(),
+    solid(),
+    dts({ insertTypesEntry: true }),
+  ],
   resolve: {
     alias: {
       "@": resolve(__dirname, "./src/"),
@@ -15,8 +19,8 @@ export default defineConfig({
   },
   build: {
     lib: {
-      entry: resolve(__dirname, "src/index.js"),
-      name: "crystal",
+      entry: resolve(__dirname, "src/index.ts"),
+      name: "organic-ui",
       fileName: "index",
     },
     rollupOptions: {

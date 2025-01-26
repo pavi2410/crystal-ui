@@ -1,8 +1,6 @@
 import { ParentComponent, children } from 'solid-js';
 import {cva} from "cva";
 
-import '@/styles.js'
-
 export interface ButtonProps {
   /** @default filled */
   variant?: 'filled' | 'outline' | 'flat' | 'ghost';
